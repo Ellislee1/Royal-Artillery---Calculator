@@ -117,6 +117,9 @@ namespace Royal_Artillery___Calculator
             } catch (System.IO.IOException)
             {
                 MessageBox.Show("File: "+ openFileDialogImportGun.FileName+" is already open. Can not open file", "Can not open file", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch (System.ArgumentException)
+            {
+                MessageBox.Show("No file selected to open", "No file selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
