@@ -29,11 +29,14 @@ namespace Royal_Artillery___Calculator
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalculator));
             this.txtDist = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radDistance = new System.Windows.Forms.RadioButton();
             this.radGrid = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblAlt = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTgtAlt = new System.Windows.Forms.TextBox();
@@ -44,12 +47,10 @@ namespace Royal_Artillery___Calculator
             this.artilleryRangeTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialogImportGun = new System.Windows.Forms.OpenFileDialog();
             this.lstResults = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblAlt = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblCharge = new System.Windows.Forms.Label();
-            this.lblElevation = new System.Windows.Forms.Label();
             this.lblFlightTime = new System.Windows.Forms.Label();
+            this.lblElevation = new System.Windows.Forms.Label();
+            this.lblCharge = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -115,6 +116,24 @@ namespace Royal_Artillery___Calculator
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Altitude Calcuation";
+            // 
+            // lblAlt
+            // 
+            this.lblAlt.AutoSize = true;
+            this.lblAlt.Location = new System.Drawing.Point(111, 95);
+            this.lblAlt.Name = "lblAlt";
+            this.lblAlt.Size = new System.Drawing.Size(13, 13);
+            this.lblAlt.TabIndex = 6;
+            this.lblAlt.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Altitude Difference";
             // 
             // label2
             // 
@@ -200,24 +219,6 @@ namespace Royal_Artillery___Calculator
             this.lstResults.Size = new System.Drawing.Size(217, 108);
             this.lstResults.TabIndex = 6;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Altitude Difference";
-            // 
-            // lblAlt
-            // 
-            this.lblAlt.AutoSize = true;
-            this.lblAlt.Location = new System.Drawing.Point(111, 95);
-            this.lblAlt.Name = "lblAlt";
-            this.lblAlt.Size = new System.Drawing.Size(13, 13);
-            this.lblAlt.TabIndex = 6;
-            this.lblAlt.Text = "0";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.lblFlightTime);
@@ -230,14 +231,14 @@ namespace Royal_Artillery___Calculator
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Optimal Results";
             // 
-            // lblCharge
+            // lblFlightTime
             // 
-            this.lblCharge.AutoSize = true;
-            this.lblCharge.Location = new System.Drawing.Point(6, 29);
-            this.lblCharge.Name = "lblCharge";
-            this.lblCharge.Size = new System.Drawing.Size(68, 13);
-            this.lblCharge.TabIndex = 0;
-            this.lblCharge.Text = "Charge (CH):";
+            this.lblFlightTime.AutoSize = true;
+            this.lblFlightTime.Location = new System.Drawing.Point(6, 95);
+            this.lblFlightTime.Name = "lblFlightTime";
+            this.lblFlightTime.Size = new System.Drawing.Size(84, 13);
+            this.lblFlightTime.TabIndex = 2;
+            this.lblFlightTime.Text = "Flight Time (est):";
             // 
             // lblElevation
             // 
@@ -248,14 +249,14 @@ namespace Royal_Artillery___Calculator
             this.lblElevation.TabIndex = 1;
             this.lblElevation.Text = "Elevation:";
             // 
-            // lblFlightTime
+            // lblCharge
             // 
-            this.lblFlightTime.AutoSize = true;
-            this.lblFlightTime.Location = new System.Drawing.Point(6, 95);
-            this.lblFlightTime.Name = "lblFlightTime";
-            this.lblFlightTime.Size = new System.Drawing.Size(84, 13);
-            this.lblFlightTime.TabIndex = 2;
-            this.lblFlightTime.Text = "Flight Time (est):";
+            this.lblCharge.AutoSize = true;
+            this.lblCharge.Location = new System.Drawing.Point(6, 29);
+            this.lblCharge.Name = "lblCharge";
+            this.lblCharge.Size = new System.Drawing.Size(68, 13);
+            this.lblCharge.TabIndex = 0;
+            this.lblCharge.Text = "Charge (CH):";
             // 
             // frmCalculator
             // 
@@ -267,6 +268,7 @@ namespace Royal_Artillery___Calculator
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmCalculator";
             this.Text = "Royal Artillery - Calculator";
