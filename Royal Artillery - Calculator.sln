@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Royal Artillery - Calculator", "Royal Artillery - Calculator\Royal Artillery - Calculator.csproj", "{3468E7A2-8142-44E3-AB5C-41C930DF3C4A}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RA Installer", "RA Installer\RA Installer.vdproj", "{F116CA9E-DAA5-40C1-AC34-48611B1867EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{3468E7A2-8142-44E3-AB5C-41C930DF3C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3468E7A2-8142-44E3-AB5C-41C930DF3C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3468E7A2-8142-44E3-AB5C-41C930DF3C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F116CA9E-DAA5-40C1-AC34-48611B1867EB}.Debug|Any CPU.ActiveCfg = Debug
+		{F116CA9E-DAA5-40C1-AC34-48611B1867EB}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
