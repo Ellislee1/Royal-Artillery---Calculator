@@ -22,10 +22,13 @@ namespace Royal_Artillery___Calculator
 
         private List<Record> rangeCard = new List<Record>();
 
+        private functions fcts = new functions();
+
 
         public frmCalculator()
         {
             InitializeComponent();
+            this.rangeCard = fcts.Init(this.rangeCard);
         }
 
         private void txtDist_KeyPress(object sender, KeyPressEventArgs e)
@@ -125,10 +128,10 @@ namespace Royal_Artillery___Calculator
 
         private void getElev()
         {
-            lstResults.Items.Clear();
+            lstL118Results.Items.Clear();
             List<Record> trimmed = new List<Record>();
             List<Result> results = new List<Result>();
-            Result best = new Result(0,0,0);
+            Result best = new Result("",0,0,0);
             int min = int.MaxValue;
 
             foreach(Record x in rangeCard)
@@ -190,17 +193,20 @@ namespace Royal_Artillery___Calculator
 
             foreach (Result x in results)
             {
-                lstResults.Items.Add("CH: " + x.charge + " | Elevation: " + x.elevation.ToString("F2")+" | Time (est.): "+x.flightTime.ToString("F1"));
-                if (x.charge < min)
+                if (x.gun == "L118")
                 {
-                    min = x.charge;
-                    best = x;
+                    lstL118Results.Items.Add("CH: " + x.charge + " | Elevation: " + x.elevation.ToString("F2") + " | Time (est.): " + x.flightTime.ToString("F1"));
+                    if (x.charge < min)
+                    {
+                        min = x.charge;
+                        best = x;
+                    }
                 }
             }
 
-            lblCharge.Text = "Charge (CH): " + best.charge.ToString();
-            lblElevation.Text = "Elevation: " + Math.Round((double)best.elevation).ToString();
-            lblFlightTime.Text = "Flight Time: " + best.flightTime.ToString("F1");
+            lblL118Charge.Text = "Charge (CH): " + best.charge.ToString();
+            lblL118Elevation.Text = "Elevation: " + Math.Round((double)best.elevation).ToString();
+            lblL118FlightTime.Text = "Flight Time: " + best.flightTime.ToString("F1");
             
         }
 
@@ -255,7 +261,7 @@ namespace Royal_Artillery___Calculator
             float estTime = s9 - s11;
 
 
-            return new Result(A.Charge, elevation, estTime);
+            return new Result(A.Artillery, A.Charge, elevation, estTime);
         }
     }
 }

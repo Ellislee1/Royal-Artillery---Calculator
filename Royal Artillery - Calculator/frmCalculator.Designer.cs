@@ -46,15 +46,20 @@ namespace Royal_Artillery___Calculator
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.artilleryRangeTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialogImportGun = new System.Windows.Forms.OpenFileDialog();
-            this.lstResults = new System.Windows.Forms.ListBox();
+            this.lstL118Results = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblFlightTime = new System.Windows.Forms.Label();
-            this.lblElevation = new System.Windows.Forms.Label();
-            this.lblCharge = new System.Windows.Forms.Label();
+            this.lblL118FlightTime = new System.Windows.Forms.Label();
+            this.lblL118Elevation = new System.Windows.Forms.Label();
+            this.lblL118Charge = new System.Windows.Forms.Label();
+            this.tabguns = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabguns.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDist
@@ -71,7 +76,7 @@ namespace Royal_Artillery___Calculator
             this.groupBox1.Controls.Add(this.radDistance);
             this.groupBox1.Controls.Add(this.radGrid);
             this.groupBox1.Controls.Add(this.txtDist);
-            this.groupBox1.Location = new System.Drawing.Point(12, 23);
+            this.groupBox1.Location = new System.Drawing.Point(12, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(256, 123);
             this.groupBox1.TabIndex = 2;
@@ -94,6 +99,7 @@ namespace Royal_Artillery___Calculator
             // radGrid
             // 
             this.radGrid.AutoSize = true;
+            this.radGrid.Enabled = false;
             this.radGrid.Location = new System.Drawing.Point(20, 36);
             this.radGrid.Name = "radGrid";
             this.radGrid.Size = new System.Drawing.Size(97, 17);
@@ -110,7 +116,7 @@ namespace Royal_Artillery___Calculator
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtTgtAlt);
             this.groupBox2.Controls.Add(this.txtBatAlt);
-            this.groupBox2.Location = new System.Drawing.Point(12, 152);
+            this.groupBox2.Location = new System.Drawing.Point(12, 186);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(256, 111);
             this.groupBox2.TabIndex = 3;
@@ -177,7 +183,7 @@ namespace Royal_Artillery___Calculator
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(522, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(529, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -211,63 +217,94 @@ namespace Royal_Artillery___Calculator
             this.openFileDialogImportGun.Filter = "\"csv files (*.csv)|*.csv|All files (*.*)|*.*\"";
             this.openFileDialogImportGun.Title = "Import Gun";
             // 
-            // lstResults
+            // lstL118Results
             // 
-            this.lstResults.FormattingEnabled = true;
-            this.lstResults.Location = new System.Drawing.Point(283, 30);
-            this.lstResults.Name = "lstResults";
-            this.lstResults.Size = new System.Drawing.Size(217, 108);
-            this.lstResults.TabIndex = 6;
+            this.lstL118Results.FormattingEnabled = true;
+            this.lstL118Results.Location = new System.Drawing.Point(6, 6);
+            this.lstL118Results.Name = "lstL118Results";
+            this.lstL118Results.Size = new System.Drawing.Size(217, 108);
+            this.lstL118Results.TabIndex = 6;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.lblFlightTime);
-            this.groupBox3.Controls.Add(this.lblElevation);
-            this.groupBox3.Controls.Add(this.lblCharge);
-            this.groupBox3.Location = new System.Drawing.Point(283, 152);
+            this.groupBox3.Controls.Add(this.lblL118FlightTime);
+            this.groupBox3.Controls.Add(this.lblL118Elevation);
+            this.groupBox3.Controls.Add(this.lblL118Charge);
+            this.groupBox3.Location = new System.Drawing.Point(6, 128);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(217, 111);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Optimal Results";
             // 
-            // lblFlightTime
+            // lblL118FlightTime
             // 
-            this.lblFlightTime.AutoSize = true;
-            this.lblFlightTime.Location = new System.Drawing.Point(6, 95);
-            this.lblFlightTime.Name = "lblFlightTime";
-            this.lblFlightTime.Size = new System.Drawing.Size(84, 13);
-            this.lblFlightTime.TabIndex = 2;
-            this.lblFlightTime.Text = "Flight Time (est):";
+            this.lblL118FlightTime.AutoSize = true;
+            this.lblL118FlightTime.Location = new System.Drawing.Point(6, 95);
+            this.lblL118FlightTime.Name = "lblL118FlightTime";
+            this.lblL118FlightTime.Size = new System.Drawing.Size(84, 13);
+            this.lblL118FlightTime.TabIndex = 2;
+            this.lblL118FlightTime.Text = "Flight Time (est):";
             // 
-            // lblElevation
+            // lblL118Elevation
             // 
-            this.lblElevation.AutoSize = true;
-            this.lblElevation.Location = new System.Drawing.Point(6, 64);
-            this.lblElevation.Name = "lblElevation";
-            this.lblElevation.Size = new System.Drawing.Size(54, 13);
-            this.lblElevation.TabIndex = 1;
-            this.lblElevation.Text = "Elevation:";
+            this.lblL118Elevation.AutoSize = true;
+            this.lblL118Elevation.Location = new System.Drawing.Point(6, 64);
+            this.lblL118Elevation.Name = "lblL118Elevation";
+            this.lblL118Elevation.Size = new System.Drawing.Size(54, 13);
+            this.lblL118Elevation.TabIndex = 1;
+            this.lblL118Elevation.Text = "Elevation:";
             // 
-            // lblCharge
+            // lblL118Charge
             // 
-            this.lblCharge.AutoSize = true;
-            this.lblCharge.Location = new System.Drawing.Point(6, 29);
-            this.lblCharge.Name = "lblCharge";
-            this.lblCharge.Size = new System.Drawing.Size(68, 13);
-            this.lblCharge.TabIndex = 0;
-            this.lblCharge.Text = "Charge (CH):";
+            this.lblL118Charge.AutoSize = true;
+            this.lblL118Charge.Location = new System.Drawing.Point(6, 29);
+            this.lblL118Charge.Name = "lblL118Charge";
+            this.lblL118Charge.Size = new System.Drawing.Size(68, 13);
+            this.lblL118Charge.TabIndex = 0;
+            this.lblL118Charge.Text = "Charge (CH):";
+            // 
+            // tabguns
+            // 
+            this.tabguns.Controls.Add(this.tabPage1);
+            this.tabguns.Controls.Add(this.tabPage2);
+            this.tabguns.Location = new System.Drawing.Point(274, 27);
+            this.tabguns.Name = "tabguns";
+            this.tabguns.SelectedIndex = 0;
+            this.tabguns.Size = new System.Drawing.Size(240, 270);
+            this.tabguns.TabIndex = 8;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.lstL118Results);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(232, 244);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "L118";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 211);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "AS90";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // frmCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 270);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.lstResults);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(529, 307);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tabguns);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmCalculator";
@@ -280,6 +317,8 @@ namespace Royal_Artillery___Calculator
             this.menuStrip1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tabguns.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,13 +339,16 @@ namespace Royal_Artillery___Calculator
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem artilleryRangeTableToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialogImportGun;
-        private System.Windows.Forms.ListBox lstResults;
+        private System.Windows.Forms.ListBox lstL118Results;
         private System.Windows.Forms.Label lblAlt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label lblFlightTime;
-        private System.Windows.Forms.Label lblElevation;
-        private System.Windows.Forms.Label lblCharge;
+        private System.Windows.Forms.Label lblL118FlightTime;
+        private System.Windows.Forms.Label lblL118Elevation;
+        private System.Windows.Forms.Label lblL118Charge;
+        private System.Windows.Forms.TabControl tabguns;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
 

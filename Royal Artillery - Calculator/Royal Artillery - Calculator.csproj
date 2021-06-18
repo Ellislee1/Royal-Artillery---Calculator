@@ -111,6 +111,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="functions.cs" />
     <Compile Include="Record.cs" />
     <Compile Include="RangeCard.cs" />
     <Compile Include="frmCalculator.cs">
@@ -133,6 +134,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Artillery\L118 Artillery Table.csv" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

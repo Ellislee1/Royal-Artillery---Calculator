@@ -8,8 +8,9 @@ namespace Royal_Artillery___Calculator
 {
     class Result
     {
-        public Result(int charge, float elevation, double flightTime)
+        public Result(String gun, int charge, float elevation, double flightTime)
         {
+            this.gun = gun;
             this.charge = charge;
             this.elevation = elevation;
             this.flightTime = flightTime;
@@ -17,5 +18,6 @@ namespace Royal_Artillery___Calculator
         public int charge { get; set; }
         public float elevation { get; set; }
         public double flightTime { get; set; }
+        public String gun { get; set; }
     }
 }
